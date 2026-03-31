@@ -11,6 +11,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.atividade3dispositivosmoveis_app.Midias.CadastrarMusicaActivity;
+import com.example.atividade3dispositivosmoveis_app.Midias.CadastrarPodcastActivity;
+import com.example.atividade3dispositivosmoveis_app.Midias.CadastrarVideoActivity;
+
 public class MenuCadastroMidiaActivity extends AppCompatActivity {
 
     @Override
@@ -24,7 +28,37 @@ public class MenuCadastroMidiaActivity extends AppCompatActivity {
             return insets;
         });
 
+        Button btnCadastrarMusica = findViewById(R.id.btnMusica);
+        Button btnCadastrarVideo = findViewById(R.id.btnVideo);
+        Button btnCadastrarPodcast = findViewById(R.id.btnPodcast);
         Button btnvoltar = findViewById(R.id.btnVoltarCadastro);
+
+        btnCadastrarMusica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent CadastrarMusicaActivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarMusicaActivity.class);
+                startActivity(CadastrarMusicaActivity);
+                finish();
+            }
+        });
+
+        btnCadastrarVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent CadastrarVideoActivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarVideoActivity.class);
+                startActivity(CadastrarVideoActivity);
+                finish();
+            }
+        });
+
+        btnCadastrarPodcast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent CadastrarPodcastAtctivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarPodcastActivity.class);
+                startActivity(CadastrarPodcastAtctivity);
+                finish();
+            }
+        });
 
         btnvoltar.setOnClickListener(new View.OnClickListener() {
             @Override

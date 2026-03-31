@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Atividade3DispositivosMoveis_App">
         <activity
+            android:name=".Midias.CadastrarPodcastActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Midias.CadastrarVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Midias.CadastrarMusicaActivity"
+            android:exported="false" />
+        <activity
             android:name=".ReproduzirMidiaActivity"
             android:exported="false" />
         <activity
