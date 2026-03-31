@@ -1,6 +1,8 @@
 package com.example.atividade3dispositivosmoveis_app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -28,13 +30,55 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-    }
+        Button btnCadastrarMidia = findViewById(R.id.btnCadastrarMidia);
+        Button btnListarMidias = findViewById(R.id.btnListarMidias);
+        Button btnBuscarMidia = findViewById(R.id.btnBuscarMidia);
+        Button btnReproduzirMidia = findViewById(R.id.btnReproduzirMidia);
+        Button btnSair = findViewById(R.id.btnSair);
 
-    Button btnCadastrarMidia = findViewById(R.id.btnCadastrarMidia);
-    Button btnListaMidias = findViewById(R.id.btnListaMidias);
-    Button btnBuscarMidia = findViewById(R.id.btnBuscarMidia);
-    Button btnReproduzirMidia = findViewById(R.id.btnReproduzirMidia);
-    Button btnSair = findViewById(R.id.btnSair);
+        btnCadastrarMidia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent CadastroMidia = new Intent(MainActivity.this, MenuCadastroMidiaActivity.class);
+                startActivity(CadastroMidia);
+                finish();
+            }
+        });
+
+        btnListarMidias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ListarMidias = new Intent(MainActivity.this, ListarMidiaActivity.class);
+                startActivity(ListarMidias);
+                finish();
+            }
+        });
+
+        btnBuscarMidia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent BuscaMidia = new Intent(MainActivity.this, BuscarMidiasActivity.class);
+                startActivity(BuscaMidia);
+                finish();
+            }
+        });
+
+        btnReproduzirMidia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ReproduzirMidia = new Intent(MainActivity.this, ReproduzirMidiaActivity.class);
+                startActivity(ReproduzirMidia);
+                finish();
+            }
+        });
+
+        btnSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishAffinity();
+            }
+        });
+    }
 
 
 

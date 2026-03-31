@@ -8,13 +8,13 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/txtMenu"
-        android:layout_width="65dp"
-        android:layout_height="32dp"
+        android:id="@+id/titleMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Menu"
+        android:text="MENU"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -25,15 +25,14 @@
         android:id="@+id/btnCadastrarMidia"
         android:layout_width="157dp"
         android:layout_height="47dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="60dp"
         android:text="Cadastrar Mídia"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMenu" />
+        app:layout_constraintTop_toBottomOf="@+id/titleMenu" />
 
     <Button
-        android:id="@+id/btnListaMidias"
+        android:id="@+id/btnListarMidias"
         android:layout_width="157dp"
         android:layout_height="47dp"
         android:layout_marginTop="40dp"
@@ -51,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnListaMidias" />
+        app:layout_constraintTop_toBottomOf="@+id/btnListarMidias" />
 
     <Button
         android:id="@+id/btnReproduzirMidia"
@@ -66,12 +65,11 @@
 
     <Button
         android:id="@+id/btnSair"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
         android:text="Sair"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnReproduzirMidia" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
