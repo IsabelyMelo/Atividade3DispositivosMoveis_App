@@ -1,6 +1,9 @@
 package com.example.atividade3dispositivosmoveis_app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,17 @@ public class BuscarMidiasActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button btnvoltar = findViewById(R.id.btnVoltarBuscar);
+
+        btnvoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent MainActivity = new Intent(BuscarMidiasActivity.this, MainActivity.class);
+                startActivity(MainActivity);
+                finish();
+            }
         });
     }
 }
