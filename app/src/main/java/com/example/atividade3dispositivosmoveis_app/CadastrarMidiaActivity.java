@@ -1,4 +1,4 @@
-package com.example.atividade3dispositivosmoveis_app.Midias;
+package com.example.atividade3dispositivosmoveis_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,30 +11,25 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.atividade3dispositivosmoveis_app.ListarMidiaActivity;
-import com.example.atividade3dispositivosmoveis_app.MainActivity;
-import com.example.atividade3dispositivosmoveis_app.MenuCadastroMidiaActivity;
-import com.example.atividade3dispositivosmoveis_app.R;
-
-public class CadastrarMusicaActivity extends AppCompatActivity {
+public class CadastrarMidiaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.cadastrar_musica);
+        setContentView(R.layout.cadastrar_midia);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        Button btnvoltar = findViewById(R.id.btnVoltarMusica);
+        Button btnvoltar = findViewById(R.id.btnVoltarMidia);
 
         btnvoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent MenuCadastroMidiaActivity = new Intent(CadastrarMusicaActivity.this, MenuCadastroMidiaActivity.class);
+                Intent MenuCadastroMidiaActivity = new Intent(CadastrarMidiaActivity.this, MenuCadastroMidiaActivity.class);
                 startActivity(MenuCadastroMidiaActivity);
                 finish();
             }

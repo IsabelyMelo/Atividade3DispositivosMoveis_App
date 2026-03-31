@@ -11,10 +11,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.atividade3dispositivosmoveis_app.Midias.CadastrarMusicaActivity;
-import com.example.atividade3dispositivosmoveis_app.Midias.CadastrarPodcastActivity;
-import com.example.atividade3dispositivosmoveis_app.Midias.CadastrarVideoActivity;
-
 public class MenuCadastroMidiaActivity extends AppCompatActivity {
 
     @Override
@@ -36,7 +32,7 @@ public class MenuCadastroMidiaActivity extends AppCompatActivity {
         btnCadastrarMusica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent CadastrarMusicaActivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarMusicaActivity.class);
+                Intent CadastrarMusicaActivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarMidiaActivity.class);
                 startActivity(CadastrarMusicaActivity);
                 finish();
             }
@@ -45,7 +41,7 @@ public class MenuCadastroMidiaActivity extends AppCompatActivity {
         btnCadastrarVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent CadastrarVideoActivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarVideoActivity.class);
+                Intent CadastrarVideoActivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarMidiaActivity.class);
                 startActivity(CadastrarVideoActivity);
                 finish();
             }
@@ -54,7 +50,7 @@ public class MenuCadastroMidiaActivity extends AppCompatActivity {
         btnCadastrarPodcast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent CadastrarPodcastAtctivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarPodcastActivity.class);
+                Intent CadastrarPodcastAtctivity = new Intent(MenuCadastroMidiaActivity.this, CadastrarMidiaActivity.class);
                 startActivity(CadastrarPodcastAtctivity);
                 finish();
             }
