@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Atividade3DispositivosMoveis_App">
         <activity
+            android:name=".ReproduzirMidiaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuscarMidiasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListarMidiaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroMidiaActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
