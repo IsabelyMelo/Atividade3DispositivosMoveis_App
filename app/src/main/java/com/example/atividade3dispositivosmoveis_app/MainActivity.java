@@ -1,6 +1,7 @@
 package com.example.atividade3dispositivosmoveis_app;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +9,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.atividade3dispositivosmoveis_app.Model.Midia;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    public static ArrayList<Midia> listaMidias = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +27,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
     }
+
+    Button btnCadastrarMidia = findViewById(R.id.btnCadastrarMidia);
+    Button btnListaMidias = findViewById(R.id.btnListaMidias);
+    Button btnBuscarMidia = findViewById(R.id.btnBuscarMidia);
+    Button btnReproduzirMidia = findViewById(R.id.btnReproduzirMidia);
+    Button btnSair = findViewById(R.id.btnSair);
+
+
+
 }
