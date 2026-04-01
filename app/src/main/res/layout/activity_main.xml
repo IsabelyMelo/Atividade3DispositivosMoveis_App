@@ -7,69 +7,62 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/titleMenu"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="MENU"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnCadastrarMidia"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="60dp"
-        android:text="Cadastrar Mídia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleMenu" />
-
-    <Button
-        android:id="@+id/btnListarMidias"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="40dp"
-        android:text="Listar Mídias"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCadastrarMidia" />
-
-    <Button
-        android:id="@+id/btnBuscarMidia"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="40dp"
-        android:text="Buscar Midia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnListarMidias" />
-
-    <Button
-        android:id="@+id/btnReproduzirMidia"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="40dp"
-        android:text="Reproduzir Mídia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBuscarMidia" />
-
-    <Button
-        android:id="@+id/btnSair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:text="Sair"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22"
+        tools:layout_editor_absoluteX="16dp">
+
+        <TextView
+            android:id="@+id/titleMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="MENU"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCadastrarMidia"
+            android:layout_width="157dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="60dp"
+            android:text="Cadastrar Mídia" />
+
+        <Button
+            android:id="@+id/btnListarMidias"
+            android:layout_width="157dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="40dp"
+            android:text="Listar Mídias" />
+
+        <Button
+            android:id="@+id/btnBuscarMidia"
+            android:layout_width="157dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="40dp"
+            android:text="Buscar Midia" />
+
+        <Button
+            android:id="@+id/btnReproduzirMidia"
+            android:layout_width="157dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="40dp"
+            android:text="Reproduzir Mídia" />
+
+        <Button
+            android:id="@+id/btnSair"
+            android:layout_width="157dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="40dp"
+            android:text="Sair" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

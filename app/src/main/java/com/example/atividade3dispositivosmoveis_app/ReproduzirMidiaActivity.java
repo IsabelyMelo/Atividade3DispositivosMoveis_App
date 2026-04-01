@@ -24,15 +24,12 @@ public class ReproduzirMidiaActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button btnvoltar = findViewById(R.id.btnVoltarReproduzir);
+        Button btnVoltar = findViewById(R.id.btnVoltarReproduzir);
 
-        btnvoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent MainActivity = new Intent(ReproduzirMidiaActivity.this, MainActivity.class);
-                startActivity(MainActivity);
-                finish();
-            }
+        btnVoltar.setOnClickListener(view -> {
+            Intent MainActivity = new Intent(ReproduzirMidiaActivity.this, MainActivity.class);
+            startActivity(MainActivity);
+            finish();
         });
     }
 }

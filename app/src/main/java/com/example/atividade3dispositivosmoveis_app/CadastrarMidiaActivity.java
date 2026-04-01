@@ -1,5 +1,7 @@
 package com.example.atividade3dispositivosmoveis_app;
 
+import static com.example.atividade3dispositivosmoveis_app.MainActivity.listaMidias;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +37,7 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
     private LinearLayout layoutMusica, layoutVideo, layoutPodcast;
     private Button btnCadastrar;
 
-    private Button btnvoltar;
+    private Button btnVoltar;
     private TextView tvResultado;
 
     private TipoMidia tipoSelecionado;
@@ -51,36 +53,23 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
             return insets;
         });
 
-        inicializarComponentes();
-        configurarSpinner();
-        configurarBotao();
-    }
-
-    private void inicializarComponentes() {
-        etTitulo = findViewById(R.id.etTitulo);
-        etAno = findViewById(R.id.etAno);
-
-        etArtista = findViewById(R.id.etArtista);
-        etAlbum = findViewById(R.id.etAlbum);
-
-        etDiretor = findViewById(R.id.etDiretor);
-        etDuracao = findViewById(R.id.etDuracao);
-
-        etAnfitriao = findViewById(R.id.etAnfitriao);
-        etEpisodio = findViewById(R.id.etEpisodio);
-
+        etTitulo = findViewById(R.id.inputTitulo);
+        etAno = findViewById(R.id.inputAno);
+        etArtista = findViewById(R.id.inputArtista);
+        etAlbum = findViewById(R.id.inputAlbum);
+        etDiretor = findViewById(R.id.inputDiretor);
+        etDuracao = findViewById(R.id.inputDuracao);
+        etAnfitriao = findViewById(R.id.inputAnfitriao);
+        etEpisodio = findViewById(R.id.inputEpisodio);
         spinnerTipoMidia = findViewById(R.id.spinnerTipoMidia);
-
         layoutMusica = findViewById(R.id.layoutMusica);
         layoutVideo = findViewById(R.id.layoutVideo);
         layoutPodcast = findViewById(R.id.layoutPodcast);
 
         btnCadastrar = findViewById(R.id.btnCadastrar);
-        btnvoltar = findViewById(R.id.btnVoltarMidia);
-        tvResultado = findViewById(R.id.tvResultado);
-    }
+        btnVoltar = findViewById(R.id.btnVoltarMidia);
+        tvResultado = findViewById(R.id.lblResultado);
 
-    private void configurarSpinner() {
         ArrayAdapter<TipoMidia> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -104,6 +93,15 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
 
         tipoSelecionado = (TipoMidia) spinnerTipoMidia.getSelectedItem();
         atualizarCamposEspecificos(tipoSelecionado);
+
+        btnCadastrar.setOnClickListener(v -> cadastrarMidia());
+
+        btnVoltar.setOnClickListener(view -> {
+            Intent MainActivity = new Intent(CadastrarMidiaActivity.this, MainActivity.class);
+            startActivity(MainActivity);
+            finish();
+        });
+
     }
 
     private void atualizarCamposEspecificos(TipoMidia tipo) {
@@ -124,19 +122,6 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
                 layoutPodcast.setVisibility(View.VISIBLE);
                 break;
         }
-    }
-
-    private void configurarBotao() {
-        btnCadastrar.setOnClickListener(v -> cadastrarMidia());
-
-        btnvoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent MainActivity = new Intent(CadastrarMidiaActivity.this, MainActivity.class);
-                startActivity(MainActivity);
-                finish();
-            }
-        });
     }
 
     private void cadastrarMidia() {
@@ -197,13 +182,30 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
             }
 
             tvResultado.setText(
-                    midia.exibirDetalhes() + "\n\n" + midia.reproduzir()
+                    midia.exibirDetalhes()
             );
+
+            listaMidias.add(midia);
+            limparCampos();
 
             Toast.makeText(this, "Mídia cadastrada com sucesso.", Toast.LENGTH_SHORT).show();
 
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Ano, duração e episódio devem ser numéricos.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void limparCampos() {
+        etTitulo.setText("");
+        etAno.setText("");
+
+        etArtista.setText("");
+        etAlbum.setText("");
+
+        etDiretor.setText("");
+        etDuracao.setText("");
+
+        etAnfitriao.setText("");
+        etEpisodio.setText("");
     }
 }
