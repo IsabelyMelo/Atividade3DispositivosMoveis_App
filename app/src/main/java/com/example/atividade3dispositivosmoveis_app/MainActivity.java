@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnCadastrarMidia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent CadastroMidia = new Intent(MainActivity.this, MenuCadastroMidiaActivity.class);
+                Intent CadastroMidia = new Intent(MainActivity.this, CadastrarMidiaActivity.class);
                 startActivity(CadastroMidia);
                 finish();
             }

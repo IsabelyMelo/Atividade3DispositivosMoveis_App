@@ -33,9 +33,6 @@
             android:name=".ListarMidiaActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuCadastroMidiaActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
