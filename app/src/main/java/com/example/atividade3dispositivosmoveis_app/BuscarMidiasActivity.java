@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.atividade3dispositivosmoveis_app.Model.Midia;
 
 public class BuscarMidiasActivity extends AppCompatActivity {
 
@@ -24,7 +28,24 @@ public class BuscarMidiasActivity extends AppCompatActivity {
             return insets;
         });
 
+        EditText inputBuscar = findViewById(R.id.inputBuscar);
+        TextView outputBuscar = findViewById(R.id.outputBuscar);
+        Button btnBuscar = findViewById(R.id.btnBuscar);
         Button btnVoltar = findViewById(R.id.btnVoltarBuscar);
+
+        btnBuscar.setOnClickListener(view -> {
+            String titulo = inputBuscar.getText().toString().trim();
+            if (!titulo.isBlank()) {
+                for (Midia m : MainActivity.listaMidias) {
+                    if (m.getTitulo().equalsIgnoreCase(titulo)) {
+                        outputBuscar.setText(m.toString());
+                        return;
+                    }
+                }
+            }else{
+                outputBuscar.setText("Preencha o campo de busca.");
+            }
+        });
 
         btnVoltar.setOnClickListener(view -> {
             Intent MainActivity = new Intent(BuscarMidiasActivity.this, MainActivity.class);

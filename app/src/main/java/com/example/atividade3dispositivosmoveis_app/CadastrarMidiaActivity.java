@@ -28,17 +28,17 @@ import com.example.atividade3dispositivosmoveis_app.Model.Video;
 
 public class CadastrarMidiaActivity extends AppCompatActivity {
 
-    private EditText etTitulo, etAno;
-    private EditText etArtista, etAlbum;
-    private EditText etDiretor, etDuracao;
-    private EditText etAnfitriao, etEpisodio;
+    private EditText inputTitulo, inputAno;
+    private EditText inputArtista, inputAlbum;
+    private EditText inputDiretor, inputDuracao;
+    private EditText inputAnfitriao, inputEpisodio;
 
     private Spinner spinnerTipoMidia;
     private LinearLayout layoutMusica, layoutVideo, layoutPodcast;
     private Button btnCadastrar;
 
     private Button btnVoltar;
-    private TextView tvResultado;
+    private TextView lblResultado;
 
     private TipoMidia tipoSelecionado;
 
@@ -53,14 +53,14 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
             return insets;
         });
 
-        etTitulo = findViewById(R.id.inputTitulo);
-        etAno = findViewById(R.id.inputAno);
-        etArtista = findViewById(R.id.inputArtista);
-        etAlbum = findViewById(R.id.inputAlbum);
-        etDiretor = findViewById(R.id.inputDiretor);
-        etDuracao = findViewById(R.id.inputDuracao);
-        etAnfitriao = findViewById(R.id.inputAnfitriao);
-        etEpisodio = findViewById(R.id.inputEpisodio);
+        inputTitulo = findViewById(R.id.inputTitulo);
+        inputAno = findViewById(R.id.inputAno);
+        inputArtista = findViewById(R.id.inputArtista);
+        inputAlbum = findViewById(R.id.inputAlbum);
+        inputDiretor = findViewById(R.id.inputDiretor);
+        inputDuracao = findViewById(R.id.inputDuracao);
+        inputAnfitriao = findViewById(R.id.inputAnfitriao);
+        inputEpisodio = findViewById(R.id.inputEpisodio);
         spinnerTipoMidia = findViewById(R.id.spinnerTipoMidia);
         layoutMusica = findViewById(R.id.layoutMusica);
         layoutVideo = findViewById(R.id.layoutVideo);
@@ -68,7 +68,7 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
 
         btnCadastrar = findViewById(R.id.btnCadastrar);
         btnVoltar = findViewById(R.id.btnVoltarMidia);
-        tvResultado = findViewById(R.id.lblResultado);
+        lblResultado = findViewById(R.id.lblResultado);
 
         ArrayAdapter<TipoMidia> adapter = new ArrayAdapter<>(
                 this,
@@ -126,8 +126,8 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
 
     private void cadastrarMidia() {
         try {
-            String titulo = etTitulo.getText().toString().trim();
-            String anoTexto = etAno.getText().toString().trim();
+            String titulo = inputTitulo.getText().toString().trim();
+            String anoTexto = inputAno.getText().toString().trim();
 
             if (titulo.isEmpty() || anoTexto.isEmpty()) {
                 Toast.makeText(this, "Preencha título e ano.", Toast.LENGTH_SHORT).show();
@@ -139,8 +139,8 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
 
             switch (tipoSelecionado) {
                 case MUSICA:
-                    String artista = etArtista.getText().toString().trim();
-                    String album = etAlbum.getText().toString().trim();
+                    String artista = inputArtista.getText().toString().trim();
+                    String album = inputAlbum.getText().toString().trim();
 
                     if (artista.isEmpty() || album.isEmpty()) {
                         Toast.makeText(this, "Preencha os campos da música.", Toast.LENGTH_SHORT).show();
@@ -151,8 +151,8 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
                     break;
 
                 case VIDEO:
-                    String diretor = etDiretor.getText().toString().trim();
-                    String duracaoTexto = etDuracao.getText().toString().trim();
+                    String diretor = inputDiretor.getText().toString().trim();
+                    String duracaoTexto = inputDuracao.getText().toString().trim();
 
                     if (diretor.isEmpty() || duracaoTexto.isEmpty()) {
                         Toast.makeText(this, "Preencha os campos do vídeo.", Toast.LENGTH_SHORT).show();
@@ -164,8 +164,8 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
                     break;
 
                 case PODCAST:
-                    String anfitriao = etAnfitriao.getText().toString().trim();
-                    String episodioTexto = etEpisodio.getText().toString().trim();
+                    String anfitriao = inputAnfitriao.getText().toString().trim();
+                    String episodioTexto = inputEpisodio.getText().toString().trim();
 
                     if (anfitriao.isEmpty() || episodioTexto.isEmpty()) {
                         Toast.makeText(this, "Preencha os campos do podcast.", Toast.LENGTH_SHORT).show();
@@ -181,7 +181,7 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
                     return;
             }
 
-            tvResultado.setText(
+            lblResultado.setText(
                     midia.exibirDetalhes()
             );
 
@@ -196,16 +196,16 @@ public class CadastrarMidiaActivity extends AppCompatActivity {
     }
 
     private void limparCampos() {
-        etTitulo.setText("");
-        etAno.setText("");
+        inputTitulo.setText("");
+        inputAno.setText("");
 
-        etArtista.setText("");
-        etAlbum.setText("");
+        inputArtista.setText("");
+        inputAlbum.setText("");
 
-        etDiretor.setText("");
-        etDuracao.setText("");
+        inputDiretor.setText("");
+        inputDuracao.setText("");
 
-        etAnfitriao.setText("");
-        etEpisodio.setText("");
+        inputAnfitriao.setText("");
+        inputEpisodio.setText("");
     }
 }
