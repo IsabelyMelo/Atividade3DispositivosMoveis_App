@@ -2,7 +2,6 @@ package com.example.atividade3dispositivosmoveis_app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -38,7 +37,7 @@ public class BuscarMidiasActivity extends AppCompatActivity {
             if (!titulo.isBlank()) {
                 for (Midia m : MainActivity.listaMidias) {
                     if (m.getTitulo().equalsIgnoreCase(titulo)) {
-                        outputBuscar.setText(m.toString());
+                        outputBuscar.setText(m.exibirDetalhes());
                         return;
                     }
                 }
