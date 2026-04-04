@@ -7,40 +7,45 @@
     android:layout_height="match_parent"
     tools:context=".ListarMidiaActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276"
-        tools:layout_editor_absoluteX="0dp">
-
-        <TextView
-            android:id="@+id/titleListar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="MÍDIAS CADASTRADAS"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+        app:layout_constraintBottom_toTopOf="@id/btnVoltarListar">
 
         <LinearLayout
-            android:id="@+id/containerMidias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:orientation="vertical"/>
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <Button
-            android:id="@+id/btnVoltarListar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="Voltar" />
+            <TextView
+                android:id="@+id/titleListar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MÍDIAS CADASTRADAS"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/containerMidias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnVoltarListar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
