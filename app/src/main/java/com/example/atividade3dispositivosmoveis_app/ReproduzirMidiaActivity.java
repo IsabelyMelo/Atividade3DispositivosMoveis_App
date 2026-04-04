@@ -41,9 +41,11 @@ public class ReproduzirMidiaActivity extends AppCompatActivity {
                                 m.reproduzir()
                         );
                         return;
+                    } else {
+                        outputReproduzir.setText("Mídia não encontrada.");
                     }
                 }
-            }else{
+            } else {
                 outputReproduzir.setText("Preencha o campo de busca.");
             }
         });

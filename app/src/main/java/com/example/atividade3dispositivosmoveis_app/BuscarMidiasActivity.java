@@ -39,6 +39,8 @@ public class BuscarMidiasActivity extends AppCompatActivity {
                     if (m.getTitulo().equalsIgnoreCase(titulo)) {
                         outputBuscar.setText(m.exibirDetalhes());
                         return;
+                    } else {
+                        outputBuscar.setText("Mídia não encontrada.");
                     }
                 }
             }else{

@@ -52,8 +52,7 @@
             android:id="@+id/outputBuscar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
-            android:text="TextView" />
+            android:layout_marginTop="72dp" />
 
         <Button
             android:id="@+id/btnVoltarBuscar"
