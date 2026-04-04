@@ -23,10 +23,10 @@
                 android:id="@+id/titleListar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="MÍDIAS CADASTRADAS"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp" />
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/containerMidias"
